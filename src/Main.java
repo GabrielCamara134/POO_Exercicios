@@ -3,14 +3,42 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Aluno A1 = new Aluno("Gabriel", "202530011", 8, 9);
-        Aluno A2 = new Aluno("Renan", "202530012", 7, 9);
-        Aluno A3 = new Aluno("Caua", "202530013", 5, 5);
+        ContaBancaria conta = new ContaBancaria();
+        int opcao;
+        double valor;
+        System.out.println("Bem vindo ao banco *******");
+        System.out.print("Digite o nome do titular da conta:");
+        conta.setTitular(sc.nextLine());
+        System.out.println("Bem vindo senhor " + conta.getTitular());
+        System.out.println("Digite o numero da conta:");
+        conta.setNumeroConta(sc.nextDouble());
 
-        System.out.println("Nome:" + A1.getNome() + " Media:" + A1.calcularMedia() + " Estado:" + A1.verificarAprovacao());
-        System.out.println("Nome:" + A2.getNome() + " Media:" + A2.calcularMedia() + " Estado:" + A2.verificarAprovacao());
-        System.out.println("Nome:" + A3.getNome() + " Media:" + A3.calcularMedia() + " Estado:" + A3.verificarAprovacao());
+        do{
+            System.out.println("1.Depositar");
+            System.out.println("2.Sacar");
+            System.out.println("3.Exibir Saldo");
+            System.out.println("4.Sair");
+            System.out.println("Opcao:");
+            opcao = sc.nextInt();
+            switch(opcao) {
+                case 1:
+                    System.out.println("Digite o valor que voce quer depositar:");
+                    valor = sc.nextDouble();
+                    conta.depositar(valor);
+                    break;
+                case 2:
+                    System.out.println("Digite o valor que voce quer sacar:");
+                    valor = sc.nextDouble();
+                    conta.sacar(valor);
+                    break;
+                case 3:
+                    System.out.println("Saldo:" + conta.getSaldo());
+                    break;
+                case 4:
+                    System.out.println("Valeu!!");
+                    break;
+            }
 
-
+        }while(opcao <=3);
     }
 }
