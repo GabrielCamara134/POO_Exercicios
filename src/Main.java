@@ -3,42 +3,32 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ContaBancaria conta = new ContaBancaria();
+        Produto produto = new Produto();
         int opcao;
-        double valor;
-        System.out.println("Bem vindo ao banco *******");
-        System.out.print("Digite o nome do titular da conta:");
-        conta.setTitular(sc.nextLine());
-        System.out.println("Bem vindo senhor " + conta.getTitular());
-        System.out.println("Digite o numero da conta:");
-        conta.setNumeroConta(sc.nextDouble());
 
-        do{
-            System.out.println("1.Depositar");
-            System.out.println("2.Sacar");
-            System.out.println("3.Exibir Saldo");
-            System.out.println("4.Sair");
-            System.out.println("Opcao:");
-            opcao = sc.nextInt();
-            switch(opcao) {
-                case 1:
-                    System.out.println("Digite o valor que voce quer depositar:");
-                    valor = sc.nextDouble();
-                    conta.depositar(valor);
-                    break;
-                case 2:
-                    System.out.println("Digite o valor que voce quer sacar:");
-                    valor = sc.nextDouble();
-                    conta.sacar(valor);
-                    break;
-                case 3:
-                    System.out.println("Saldo:" + conta.getSaldo());
-                    break;
-                case 4:
-                    System.out.println("Valeu!!");
-                    break;
-            }
+        System.out.println("Digite o nome do produto:");
+        produto.setNome(sc.nextLine());
+        System.out.println("Digite o quantidade do produto:");
+        produto.setQuantidadeEmEstoque(sc.nextInt());
+        System.out.println("Digite o valor do produto:");
+        produto.setPreco(sc.nextDouble());
 
-        }while(opcao <=3);
+            do{
+                System.out.println("1.Adicionar estoque");
+                System.out.println("2.Remover estoque");
+                System.out.println("3.ver estoque");
+                System.out.println("4.Sair");
+                opcao = sc.nextInt();
+                switch(opcao){
+                    case 1: System.out.println("Digite a quantidade que voce quer adicionar:");
+                            produto.AdicionarEstoque(sc.nextInt()); break;
+                    case 2: System.out.println("Digite a quantidade que voce remover:");
+                            produto.removerEstoque(sc.nextInt()); break;
+                    case 3: System.out.println("Quantidade em estoque:"+ produto.getQuantidadeEmEstoque()); break;
+
+                    case 4: System.out.println("Tchau"); break;
+
+                }
+            }while(opcao!=4);
     }
 }
