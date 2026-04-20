@@ -3,20 +3,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Animal animal = new Animal();
-        Gato gato = new Gato();
-        Cachorro cachorro = new Cachorro();
+        Veiculo veiculo = new Veiculo();
+        Motot moto = new Motot();
+        Caminhao caminhao = new Caminhao();
 
-        gato.setNome("Geraldo");
-        gato.setIdade(13);
-        gato.setPeso(8.5f);
+        caminhao.setMarca("Ford");
+        caminhao.setModelo("Fiat");
+        caminhao.setCapacidadeCarga(100000);
+        moto.setMarca("Fiat");
+        moto.setModelo("Fiat");
+        moto.setTemcarga(true);
 
-        cachorro.setNome("Oswaldo");
-        cachorro.setIdade(18);
-        cachorro.setPeso(5f);
-        cachorro.setRaca("Urubu");
-
-        cachorro.EmitirSom();
-        gato.EmitirSom();
+        moto.ligar();
+        caminhao.ligar();
     }
+
 }
