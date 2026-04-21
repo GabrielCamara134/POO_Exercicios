@@ -3,19 +3,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Veiculo veiculo = new Veiculo();
-        Motot moto = new Motot();
-        Caminhao caminhao = new Caminhao();
+        Colaborador colaborador = new Colaborador();
+        Vendedor vendedor = new Vendedor();
+        Administrativo administrativo = new Administrativo();
 
-        caminhao.setMarca("Ford");
-        caminhao.setModelo("Fiat");
-        caminhao.setCapacidadeCarga(100000);
-        moto.setMarca("Fiat");
-        moto.setModelo("Fiat");
-        moto.setTemcarga(true);
-
-        moto.ligar();
-        caminhao.ligar();
+        vendedor.setNome("Oswaldo");
+        administrativo.setNome("Mr. noodles");
+        vendedor.setSalarioBase(1300);
+        administrativo.setSalarioBase(2500);
+        System.out.println("Vendedor:" + vendedor.getNome());
+        System.out.println("Salario:" + vendedor.calcularSalario());
+        System.out.println("Administrativo:" + administrativo.getNome());
+        System.out.println("Salario:" + administrativo.calcularSalario());
     }
 
 }
