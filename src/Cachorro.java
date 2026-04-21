@@ -7,5 +7,8 @@ public class Cachorro extends Animal {
     public void setRaca(String raca) {
         this.raca = raca;
     }
-
+    @Override
+    public void EmitirSom(){
+        System.out.println("AU AU!!");
+    }
 }
