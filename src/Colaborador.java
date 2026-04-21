@@ -1,6 +1,6 @@
 public class Colaborador {
-    private String nome;
-    private double salarioBase;
+    protected String nome;
+    protected double salarioBase;
 
     public double calcularSalario(){
         return this.salarioBase;
