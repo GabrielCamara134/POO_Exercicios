@@ -3,11 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Formatar formatar = new Formatar();
+        ContaBancaria conta = new ContaBancaria("Gabriel", 1902934);
+        ContaBancaria conta2 = new ContaBancaria("Mr noodles", 1902934, 1500);
 
-        System.out.println("Texto:" + formatar.imprimirTexto("Peixe Bola Gato"));
-        System.out.println("Texto repetidas vezes:"); formatar.imprimirTexto("Vamoooo", 10);
-        System.out.println("Texto em Maiúsculo: " + formatar.imprimirTexto("VAMOO", false));
 
     }
 
